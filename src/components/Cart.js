@@ -1,12 +1,25 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import CartHeader from './CartHeader'
+import CartItem from './CartItem'
+import CartFooter from './CartFooter'
+import Checkout from './Checkout'
+import CartItems from './CartItems'
 
-function Cart() {
+function Cart(props) {
     return (
         <div>
-            <p>I am the header</p>
-            <p>This is the body of th component</p>
+            <CartHeader />
+            <CartItems />
+            <CartFooter total={101} />
+            <Checkout />
         </div>
     )
 }
 
+Cart.propTypes = {
+
+}
+
 export default Cart
+

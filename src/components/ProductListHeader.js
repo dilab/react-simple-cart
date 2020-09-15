@@ -1,11 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function ProductListHeader() {
+function ProductListHeader(props) {
     return (
-        <div>
-
-        </div>
+        <p>{props.productsCount} Product(s) found</p>
     )
 }
 
+ProductListHeader.propTypes = {
+    productsCount: PropTypes.number
+}
+
 export default ProductListHeader
+

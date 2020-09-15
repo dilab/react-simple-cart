@@ -1,10 +1,12 @@
 import React from 'react'
 
-function FilterOption() {
+function FilterOption(props) {
     return (
-        <div>
-
-        </div>
+        <>
+            <button
+                type="button"
+                className="btn btn-primary mb-3 rounded-pill mr-1"> {props.value} </button>
+        </>
     )
 }
 

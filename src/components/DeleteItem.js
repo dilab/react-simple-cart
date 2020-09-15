@@ -1,11 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function DeleteItem() {
+function DeleteItem(props) {
     return (
-        <div>
-
-        </div>
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     )
 }
 
+DeleteItem.propTypes = {
+
+}
+
 export default DeleteItem
+

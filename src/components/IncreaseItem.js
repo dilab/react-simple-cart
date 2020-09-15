@@ -1,11 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function IncreaseItem() {
+function IncreaseItem(props) {
     return (
-        <div>
-
-        </div>
+        <button type="button" class="btn btn-secondary btn-sm">+</button>
     )
 }
 
+IncreaseItem.propTypes = {
+
+}
+
 export default IncreaseItem
+
