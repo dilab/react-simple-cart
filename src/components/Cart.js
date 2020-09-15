@@ -9,7 +9,7 @@ import CartItems from './CartItems'
 function Cart(props) {
     return (
         <div>
-            <CartHeader />
+            <CartHeader productsCount={2} />
             <CartItems />
             <CartFooter total={101} />
             <Checkout />
