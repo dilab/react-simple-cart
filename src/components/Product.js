@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function Product(props) {
+    let { isFreeShipping } = props;
+
     return (
         <div className="card text-center">
 
-            { props.isFreeShipping &&
+            {isFreeShipping &&
                 <span className="badge badge-warning position-absolute m-1">Free shipping</span>}
 
             <img src={props.imgLink} className="card-img-top" alt={props.name} />

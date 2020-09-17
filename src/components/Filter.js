@@ -5,7 +5,7 @@ function Filter(props) {
     const options = ['XS', 'S', 'M', 'ML', 'L', 'XL', 'XXL'];
 
     const optionsContent = options.map((option) => {
-        return <FilterOption value={option} key={option} />
+        return <FilterOption selected={true} value={option} key={option} />
     });
 
     return (

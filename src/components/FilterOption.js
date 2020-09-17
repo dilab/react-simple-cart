@@ -1,11 +1,15 @@
 import React from 'react'
 
 function FilterOption(props) {
+
+    const btnType = props.selected ? 'btn-secondary' : 'btn-primary';
+
     return (
         <>
             <button
                 type="button"
-                className="btn btn-primary mb-3 rounded-pill mr-1"> {props.value} </button>
+                className={'btn mb-3 rounded-pill mr-1 ' + btnType}> {props.value}
+            </button>
         </>
     )
 }

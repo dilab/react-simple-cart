@@ -6,9 +6,9 @@ function ProductList() {
 
     const products = [
         { id: 1, price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
-        { id: 2, price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
+        { id: 2, price: 10.90, isFreeShipping: false, imgLink: 'https://via.placeholder.com/300x400.png' },
         { id: 3, price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
-        { id: 1, price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
+        { id: 1, price: 10.90, isFreeShipping: false, imgLink: 'https://via.placeholder.com/300x400.png' },
     ];
 
     const productsContent = products.map((product) => {
