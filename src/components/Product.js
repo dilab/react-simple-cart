@@ -23,6 +23,7 @@ function Product(props) {
 }
 
 Product.propTypes = {
+    id: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
     isFreeShipping: PropTypes.bool,

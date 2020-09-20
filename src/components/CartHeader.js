@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function CartHeader(props) {
     return (
         <h3>
-            Cart <span class="badge badge-warning rounded-pill">{props.productsCount}</span>
+            Cart <span className="badge badge-warning rounded-pill">{props.productsCount}</span>
         </h3>
     )
 }

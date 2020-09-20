@@ -6,25 +6,25 @@ import DeleteItem from './DeleteItem'
 
 function CartItem(props) {
     return (
-        <div class="row border-top border-1">
+        <div className="row border-top border-1">
 
-            <div class="col p-2">
-                <img src={props.imgLink} class="float-left mr-2" alt={props.name} />
-                <h5 class="card-title mt-5">{props.name}</h5>
-                <ul class="list-unstyled">
+            <div className="col p-2">
+                <img src={props.imgLink} className="float-left mr-2" alt={props.name} />
+                <h5 className="card-title mt-5">{props.name}</h5>
+                <ul className="list-unstyled">
                     <li>Size: {props.size}</li>
                     <li>Quantity: {props.quantity}</li>
                 </ul>
             </div>
-            <div class="col-md-2 text-right">
+            <div className="col-md-2 text-right">
 
                 <DeleteItem />
 
-                <h4 class="mt-5 pb-3 pt-3">
+                <h4 className="mt-5 pb-3 pt-3">
                     ${props.price}
                 </h4>
 
-                <div class="btn-group" role="group">
+                <div className="btn-group" role="group">
                     <DecreaseItem />
                     <IncreaseItem />
                 </div>

@@ -5,16 +5,17 @@ import ProductListHeader from './ProductListHeader'
 function ProductList() {
 
     const products = [
-        { id: 1, price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
-        { id: 2, price: 10.90, isFreeShipping: false, imgLink: 'https://via.placeholder.com/300x400.png' },
-        { id: 3, price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
-        { id: 1, price: 10.90, isFreeShipping: false, imgLink: 'https://via.placeholder.com/300x400.png' },
+        { id: 1, name: "Cat Tee Black T-Shirt", price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
+        { id: 2, name: "Cat Tee Black T-Shirt", price: 10.90, isFreeShipping: false, imgLink: 'https://via.placeholder.com/300x400.png' },
+        { id: 3, name: "Cat Tee Black T-Shirt", price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
+        { id: 4, name: "Cat Tee Black T-Shirt", price: 10.90, isFreeShipping: false, imgLink: 'https://via.placeholder.com/300x400.png' },
     ];
 
     const productsContent = products.map((product) => {
         return (
-            <div class="col-3">
+            <div className="col-3" key={product.id}>
                 <Product
+                    id={product.id}
                     name={product.name}
                     price={product.price}
                     isFreeShipping={product.isFreeShipping}
@@ -28,7 +29,7 @@ function ProductList() {
         <div>
             <ProductListHeader productsCount={3} />
 
-            <div class="row">
+            <div className="row">
                 {productsContent}
             </div>
         </div>

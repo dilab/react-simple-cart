@@ -6,15 +6,15 @@ import Cart from './components/Cart';
 
 function App() {
   return (
-    <div class="container-fluid mt-5">
-      <div class="row">
-        <div class="col-2">
+    <div className="container-fluid mt-5">
+      <div className="row">
+        <div className="col-2">
           <Filter />
         </div>
-        <div class="col-10">
+        <div className="col-10">
           <ProductList />
         </div>
-        <div class="container mt-5" style={{ maxWidth: 540 }}>
+        <div className="container mt-5" style={{ maxWidth: 540 }}>
           <Cart />
         </div>
       </div>
