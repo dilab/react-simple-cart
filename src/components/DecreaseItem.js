@@ -5,34 +5,30 @@ class DecreaseItem extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            quantity: 1
-        };
 
         this.handleClick = this.handleClick.bind(this);
     }
 
     render() {
+
         return (
             <button
                 type="button"
                 className="btn btn-secondary btn-sm"
                 onClick={this.handleClick}
-            > - ({this.state.quantity})</button>
+            > - </button>
         )
     }
 
     handleClick() {
-        this.setState(state => {
-            return {
-                quantity: state.quantity - 1
-            }
-        })
+        this.props.onDecreaseItem();
     }
 }
 
 DecreaseItem.propTypes = {
-    id: PropTypes.number
+    id: PropTypes.number,
+    quantity: PropTypes.number,
+    onDecreaseItem: PropTypes.func
 }
 
 export default DecreaseItem
