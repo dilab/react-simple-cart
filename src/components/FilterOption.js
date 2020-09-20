@@ -6,6 +6,8 @@ class FilterOption extends React.Component {
     constructor(props) {
         super(props);
         this.state = { initialState: this.props.selected };
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     render() {
@@ -13,7 +15,9 @@ class FilterOption extends React.Component {
             <>
                 <button
                     type="button"
-                    className={'btn mb-3 rounded-pill mr-1 ' + this.getBtnType()}>
+                    className={'btn mb-3 rounded-pill mr-1 ' + this.getBtnType()}
+                    onClick={this.handleClick}
+                >
                     {this.props.value}
                 </button>
             </>
@@ -24,22 +28,14 @@ class FilterOption extends React.Component {
         return this.state.initialState ? 'btn-secondary' : 'btn-primary';
     }
 
-    updateSelection() {
-        this.setState((state) => ({
-            initialState: !state.initialState
-        }));
+    handleClick() {
+        this.setState(state => {
+            return { initialState: !state.initialState }
+        });
+
+        // alert('clicked ' + this.props.value);
     }
 
-    componentDidMount() {
-        this.timer = setInterval(
-            () => this.updateSelection(),
-            1000
-        )
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timer);
-    }
 }
 
 FilterOption.propTypes = {
