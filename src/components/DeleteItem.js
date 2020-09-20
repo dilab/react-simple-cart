@@ -10,7 +10,7 @@ function DeleteItem(props) {
 }
 
 DeleteItem.propTypes = {
-
+    id: PropTypes.number
 }
 
 export default DeleteItem

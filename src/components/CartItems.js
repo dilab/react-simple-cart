@@ -12,6 +12,7 @@ function CartItems(props) {
 
     const itemsContent = items.map((item) => {
         return <CartItem
+            id={item.id}
             name={item.name}
             price={item.price}
             imgLink={item.imgLink}

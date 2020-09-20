@@ -18,15 +18,15 @@ function CartItem(props) {
             </div>
             <div className="col-md-2 text-right">
 
-                <DeleteItem />
+                <DeleteItem id={props.id} />
 
                 <h4 className="mt-5 pb-3 pt-3">
                     ${props.price}
                 </h4>
 
                 <div className="btn-group" role="group">
-                    <DecreaseItem />
-                    <IncreaseItem />
+                    <DecreaseItem id={props.id} quantity={props.quantity} />
+                    <IncreaseItem id={props.id} quantity={props.quantity} />
                 </div>
 
             </div>
@@ -35,6 +35,7 @@ function CartItem(props) {
 }
 
 CartItem.propTypes = {
+    id: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
     size: PropTypes.string,
