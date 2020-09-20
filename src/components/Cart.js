@@ -9,8 +9,12 @@ import CartItems from './CartItems'
 function Cart(props) {
     return (
         <div>
-            <CartHeader productsCount={2} />
-            <CartItems />
+            <CartHeader productsCount={props.productsCount} />
+            <CartItems
+                items={props.cartItems}
+                onDecreaseCartItem={(id) => { props.onDecreaseCartItem(id) }}
+                onIncreaseCartItem={(id) => { props.onIncreaseCartItem(id) }}
+            />
             <CartFooter total={101} />
             <Checkout />
         </div>
@@ -18,7 +22,10 @@ function Cart(props) {
 }
 
 Cart.propTypes = {
-
+    cartItems: PropTypes.array,
+    productsCount: PropTypes.number,
+    onDecreaseCartItem: PropTypes.func,
+    onIncreaseCartItem: PropTypes.func
 }
 
 export default Cart

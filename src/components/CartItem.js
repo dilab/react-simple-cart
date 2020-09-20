@@ -5,20 +5,10 @@ import IncreaseItem from './IncreaseItem'
 import DeleteItem from './DeleteItem'
 
 class CartItem extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            quantity: 1
-        }
-
-        this.handleDecreaseItem = this.handleDecreaseItem.bind(this);
-        this.handleIncreaseItem = this.handleIncreaseItem.bind(this);
-    }
 
 
     render() {
-        const { quantity } = this.state;
+        const { quantity } = this.props;
         return (
             <div className="row border-top border-1" >
 
@@ -41,12 +31,14 @@ class CartItem extends React.Component {
                     <div className="btn-group" role="group">
                         <DecreaseItem
                             id={this.props.id}
-                            quantity={this.state.quantity}
-                            onDecreaseItem={this.handleDecreaseItem} />
+                            onDecreaseItem={() => {
+                                this.props.onDecreaseItem();
+                            }} />
                         <IncreaseItem
                             id={this.props.id}
-                            quantity={this.state.quantity}
-                            onIncreaseItem={this.handleIncreaseItem}
+                            onIncreaseItem={() => {
+                                this.props.onIncreaseItem();
+                            }}
                         />
                     </div>
 
@@ -55,29 +47,17 @@ class CartItem extends React.Component {
         );
     }
 
-    handleDecreaseItem() {
-        this.setState((state) => {
-            return {
-                quantity: (state.quantity !== 0 ? state.quantity - 1 : 0)
-            }
-        })
-    }
-
-    handleIncreaseItem() {
-        this.setState(state => {
-            return {
-                quantity: state.quantity + 1
-            }
-        })
-    }
 }
 
 CartItem.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
+    quantity: PropTypes.number,
     size: PropTypes.string,
-    imgLink: PropTypes.string
+    imgLink: PropTypes.string,
+    onDecreaseItem: PropTypes.func,
+    onIncreaseItem: PropTypes.func
 }
 
 export default CartItem
