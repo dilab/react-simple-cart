@@ -22,6 +22,9 @@ class CartItems extends React.Component {
                 onIncreaseItem={() => {
                     this.props.onIncreaseCartItem(item.id);
                 }}
+                onDeleteItem={() => {
+                    this.props.onDeleteCartItem(item.id);
+                }}
             />
         });
 
@@ -37,7 +40,8 @@ class CartItems extends React.Component {
 CartItems.propTypes = {
     items: PropTypes.array,
     onDecreaseCartItem: PropTypes.func,
-    onIncreaseCartItem: PropTypes.func
+    onIncreaseCartItem: PropTypes.func,
+    onDeleteCartItem: PropTypes.func,
 }
 
 export default CartItems

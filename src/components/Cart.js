@@ -14,8 +14,9 @@ function Cart(props) {
                 items={props.cartItems}
                 onDecreaseCartItem={(id) => { props.onDecreaseCartItem(id) }}
                 onIncreaseCartItem={(id) => { props.onIncreaseCartItem(id) }}
+                onDeleteCartItem={(id) => { props.onDeleteCartItem(id) }}
             />
-            <CartFooter total={101} />
+            <CartFooter total={props.total} />
             <Checkout />
         </div>
     )
@@ -24,8 +25,10 @@ function Cart(props) {
 Cart.propTypes = {
     cartItems: PropTypes.array,
     productsCount: PropTypes.number,
+    total: PropTypes.string,
     onDecreaseCartItem: PropTypes.func,
-    onIncreaseCartItem: PropTypes.func
+    onIncreaseCartItem: PropTypes.func,
+    onDeleteCartItem: PropTypes.func,
 }
 
 export default Cart

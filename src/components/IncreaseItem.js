@@ -12,7 +12,6 @@ function IncreaseItem(props) {
 }
 
 IncreaseItem.propTypes = {
-    id: PropTypes.number,
     onIncreaseItem: PropTypes.func
 }
 

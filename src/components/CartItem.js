@@ -22,7 +22,7 @@ class CartItem extends React.Component {
                 </div>
                 <div className="col-md-2 text-right">
 
-                    <DeleteItem id={this.props.id} />
+                    <DeleteItem onDeleteItem={this.props.onDeleteItem} />
 
                     <h4 className="mt-5 pb-3 pt-3">
                         ${this.props.price}
@@ -57,7 +57,8 @@ CartItem.propTypes = {
     size: PropTypes.string,
     imgLink: PropTypes.string,
     onDecreaseItem: PropTypes.func,
-    onIncreaseItem: PropTypes.func
+    onIncreaseItem: PropTypes.func,
+    onDeleteItem: PropTypes.func
 }
 
 export default CartItem

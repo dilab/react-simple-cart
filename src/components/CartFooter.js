@@ -17,7 +17,7 @@ function CartFooter(props) {
 }
 
 CartFooter.propTypes = {
-    total: PropTypes.number
+    total: PropTypes.string
 }
 
 export default CartFooter

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 
 function DeleteItem(props) {
     return (
-        <button type="button" className="close" aria-label="Close">
+        <button onClick={props.onDeleteItem} type="button" className="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     )
 }
 
 DeleteItem.propTypes = {
-    id: PropTypes.number
+    onDeleteItem: PropTypes.func
 }
 
 export default DeleteItem

@@ -15,7 +15,6 @@ function DecreaseItem(props) {
 
 
 DecreaseItem.propTypes = {
-    id: PropTypes.number,
     onDecreaseItem: PropTypes.func
 }
 
