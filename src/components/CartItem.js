@@ -13,7 +13,7 @@ function CartItem(props) {
                 <h5 className="card-title mt-5">{props.name}</h5>
                 <ul className="list-unstyled">
                     <li>Size: {props.size}</li>
-                    <li>Quantity: {props.quantity}</li>
+                    <li>Quantity: 1</li>
                 </ul>
             </div>
             <div className="col-md-2 text-right">
@@ -25,8 +25,8 @@ function CartItem(props) {
                 </h4>
 
                 <div className="btn-group" role="group">
-                    <DecreaseItem id={props.id} quantity={props.quantity} />
-                    <IncreaseItem id={props.id} quantity={props.quantity} />
+                    <DecreaseItem id={props.id} />
+                    <IncreaseItem id={props.id} />
                 </div>
 
             </div>
