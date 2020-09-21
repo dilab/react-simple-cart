@@ -16,7 +16,9 @@ function Product(props) {
                 <p className="border-top border-success pt-3 mt-3">
                     <strong>$ {props.price}</strong>
                 </p>
-                <button className="btn btn-primary btn-lg btn-block rounded-0">Add to cart</button>
+                <button
+                    onClick={props.onAddToCart}
+                    className="btn btn-primary btn-lg btn-block rounded-0">Add to cart</button>
             </div>
         </div>
     )
@@ -27,7 +29,8 @@ Product.propTypes = {
     name: PropTypes.string,
     price: PropTypes.number,
     isFreeShipping: PropTypes.bool,
-    imgLink: PropTypes.string
+    imgLink: PropTypes.string,
+    onAddToCart: PropTypes.func
 }
 
 export default Product

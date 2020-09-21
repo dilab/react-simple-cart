@@ -9,11 +9,12 @@ class CartItem extends React.Component {
 
     render() {
         const { quantity } = this.props;
+
         return (
             <div className="row border-top border-1" >
 
                 <div className="col p-2">
-                    <img src={this.props.imgLink} className="float-left mr-2" alt={this.props.name} />
+                    <img width={150} src={this.props.imgLink} className="float-left mr-2" alt={this.props.name} />
                     <h5 className="card-title mt-5">{this.props.name}</h5>
                     <ul className="list-unstyled">
                         <li>Size: {this.props.size}</li>

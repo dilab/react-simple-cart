@@ -1,15 +1,12 @@
-import React from 'react'
-import Product from './Product'
-import ProductListHeader from './ProductListHeader'
+import React from 'react';
+import Product from './Product';
+import ProductListHeader from './ProductListHeader';
+import PropTypes from 'prop-types';
 
-function ProductList() {
 
-    const products = [
-        { id: 1, name: "Cat Tee Black T-Shirt", price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
-        { id: 2, name: "Cat Tee Black T-Shirt", price: 10.90, isFreeShipping: false, imgLink: 'https://via.placeholder.com/300x400.png' },
-        { id: 3, name: "Cat Tee Black T-Shirt", price: 10.90, isFreeShipping: true, imgLink: 'https://via.placeholder.com/300x400.png' },
-        { id: 4, name: "Cat Tee Black T-Shirt", price: 10.90, isFreeShipping: false, imgLink: 'https://via.placeholder.com/300x400.png' },
-    ];
+function ProductList(props) {
+
+    const { products } = props;
 
     const productsContent = products.map((product) => {
         return (
@@ -20,6 +17,7 @@ function ProductList() {
                     price={product.price}
                     isFreeShipping={product.isFreeShipping}
                     imgLink={product.imgLink}
+                    onAddToCart={() => { props.onAddToCart(product.id) }}
                 />
             </div>
         )
@@ -34,6 +32,12 @@ function ProductList() {
             </div>
         </div>
     )
+}
+
+
+ProductList.propTypes = {
+    products: PropTypes.arrayOf(PropTypes.object),
+    onAddToCart: PropTypes.func
 }
 
 export default ProductList
