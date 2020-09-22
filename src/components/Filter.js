@@ -1,11 +1,16 @@
 import React from 'react'
 import FilterOption from './FilterOption';
+import PropTypes from 'prop-types'
 
 function Filter(props) {
-    const options = ['XS', 'S', 'M', 'ML', 'L', 'XL', 'XXL'];
 
-    const optionsContent = options.map((option) => {
-        return <FilterOption selected={true} value={option} key={option} />
+    const optionsContent = props.options.map((option) => {
+        return <FilterOption
+            checked={option.checked}
+            value={option.value}
+            key={option.value}
+            onToggle={() => { props.onToggle(option.value) }}
+        />
     });
 
     return (
@@ -15,5 +20,12 @@ function Filter(props) {
         </div>
     )
 }
+
+
+Filter.propTypes = {
+    options: PropTypes.arrayOf(PropTypes.object),
+    onToggle: PropTypes.func
+}
+
 
 export default Filter

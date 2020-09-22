@@ -15,6 +15,7 @@ function ProductList(props) {
                     id={product.id}
                     name={product.name}
                     price={product.price}
+                    size={product.size}
                     isFreeShipping={product.isFreeShipping}
                     imgLink={product.imgLink}
                     onAddToCart={() => { props.onAddToCart(product.id) }}
@@ -25,7 +26,7 @@ function ProductList(props) {
 
     return (
         <div>
-            <ProductListHeader productsCount={3} />
+            <ProductListHeader productsCount={products.length} />
 
             <div className="row">
                 {productsContent}

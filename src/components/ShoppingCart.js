@@ -11,38 +11,75 @@ class ShoppingCart extends React.Component {
         super();
 
         this.state = {
-            cartItems: [
-                // {
-                //     id: 1,
-                //     name: "Cat Tee Black T-Shirt",
-                //     price: 10.90,
-                //     imgLink: 'https://via.placeholder.com/150x200.png',
-                //     size: 'S',
-                //     quantity: 1,
-                // },
-                // {
-                //     id: 2,
-                //     name: "Cat Tee Black T-Shirt",
-                //     price: 20.90,
-                //     imgLink: 'https://via.placeholder.com/150x200.png',
-                //     size: 'M',
-                //     quantity: 2,
-                // }
+            filters: [
+                { value: 'S', checked: false },
+                { value: 'M', checked: false },
+                { value: 'L', checked: false },
+                { value: 'XL', checked: false },
+            ],
+            cartItems: [],
+            filteredProducts: [],
+            products: [
+                {
+                    id: 1,
+                    size: 'S',
+                    name: "Cat Tee Black T-Shirt",
+                    price: 10.90,
+                    isFreeShipping: true,
+                    imgLink: 'https://via.placeholder.com/300x400.png'
+                },
+                {
+                    id: 2,
+                    size: 'M',
+                    name: "Cat Tee Black T-Shirt",
+                    price: 20.90,
+                    isFreeShipping: false,
+                    imgLink: 'https://via.placeholder.com/300x400.png'
+                },
+                {
+                    id: 3,
+                    size: 'L',
+                    name: "Cat Tee Black T-Shirt",
+                    price: 30.90,
+                    isFreeShipping: true,
+                    imgLink: 'https://via.placeholder.com/300x400.png'
+                },
+                {
+                    id: 4,
+                    size: 'XL',
+                    name: "Cat Tee Black T-Shirt",
+                    price: 40.90,
+                    isFreeShipping: false,
+                    imgLink: 'https://via.placeholder.com/300x400.png'
+                },
+                {
+                    id: 5,
+                    size: 'S',
+                    name: "Cat Tee Black T-Shirt",
+                    price: 10.90,
+                    isFreeShipping: true,
+                    imgLink: 'https://via.placeholder.com/300x400.png'
+                },
             ]
         }
     }
 
 
     render() {
-        const { cartItems } = this.state;
+
+        const { cartItems, filters, filteredProducts } = this.state;
+
         return (
             <div className="row">
                 <div className="col-2">
-                    <Filter />
+                    <Filter
+                        options={filters}
+                        onToggle={(optionValue) => { this.handleFilterToggle(optionValue) }}
+                    />
                 </div>
                 <div className="col-10">
                     <ProductList
-                        products={this.props.products}
+                        products={filteredProducts}
                         onAddToCart={(id) => { this.handleAddToCart(id) }}
                     />
                 </div>
@@ -70,7 +107,7 @@ class ShoppingCart extends React.Component {
         }
 
 
-        let newItem = this.props.products.find(product => product.id === id);
+        let newItem = this.state.products.find(product => product.id === id);
         newItem.quantity = 1;
         const newItems = [...items, newItem];
         this.setState({
@@ -116,6 +153,41 @@ class ShoppingCart extends React.Component {
         })
     }
 
+    handleFilterToggle(filterOption) {
+        const filterOptions = this.state.filters.slice();
+        const indexFound = filterOptions.findIndex(option => option.value === filterOption)
+        const itemFound = filterOptions[indexFound];
+        filterOptions[indexFound] = Object.assign({}, itemFound, { checked: !itemFound.checked });
+
+        this.setState({ filters: filterOptions })
+
+        this.filterProducts(filterOptions);
+    }
+
+    filterProducts(filterOptions) {
+        let products = this.state.products.slice();
+
+        const filteredOptionValues = filterOptions
+            .filter((option) => { return option.checked })
+            .map((option) => { return option.value });
+
+        if (filteredOptionValues.length === 0) {
+            this.setState(
+                { filteredProducts: products }
+            )
+            return;
+        }
+
+        products = products.filter((product) => {
+            return -1 !== filteredOptionValues.indexOf(product.size);
+        })
+
+        this.setState(
+            { filteredProducts: products }
+        )
+        return;
+    }
+
     countProducts() {
         return this.state.cartItems.reduce(function (accumulator, currentValue) {
             return accumulator + currentValue.quantity;
@@ -128,11 +200,15 @@ class ShoppingCart extends React.Component {
         }, 0)
         return total.toFixed(2);
     }
+
+    componentDidMount() {
+        this.filterProducts([])
+    }
 }
 
 
 ShoppingCart.propTypes = {
-    products: PropTypes.arrayOf(PropTypes.object)
+
 }
 
 export default ShoppingCart
