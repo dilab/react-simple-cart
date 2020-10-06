@@ -5,7 +5,7 @@ function CartCheckout(props) {
     return (
         <div className="row mb-2">
             <div className="col">
-                <button className="btn btn-primary btn-lg btn-block rounded-0">CHECKOUT</button>
+                <button className="btn btn-dark btn-lg btn-block rounded-0">CHECKOUT</button>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ function FilterOption(props) {
         <>
             <button
                 type="button"
-                className={'btn btn-sm mr-1 ' + (props.checked ? 'btn-primary' : 'btn-secondary')}
+                className={'btn btn-sm mr-1 ' + (props.checked ? 'btn-secondary' : 'btn-light')}
                 onClick={() => { props.onToggle() }}
             >
                 {props.value}
