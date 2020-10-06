@@ -1,23 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CartHeader from './CartHeader'
-import CartFooter from './CartFooter'
-import Checkout from './Checkout'
-import CartItems from './CartItems'
+import CartBody from './CartBody'
 
 function Cart(props) {
+    const style = { maxWidth: '540px', margin: 'auto' };
+
     return (
-        <div>
-            <CartHeader productsCount={props.productsCount} />
-            <CartItems
-                items={props.cartItems}
-                onDecreaseCartItem={(id) => { props.onDecreaseCartItem(id) }}
-                onIncreaseCartItem={(id) => { props.onIncreaseCartItem(id) }}
-                onDeleteCartItem={(id) => { props.onDeleteCartItem(id) }}
+        <>
+            <CartHeader
+                productsCount={props.productsCount}
+                onClickHeader={props.onClickHeader}
             />
-            <CartFooter total={props.total} />
-            <Checkout />
-        </div>
+            <div className={"container-fluid" + (!props.isCartOpen ? " d-none" : "")}>
+                <div style={style}>
+                    <CartBody
+                        items={props.cartItems}
+                        onDecreaseCartItem={(id) => { props.onDecreaseCartItem(id) }}
+                        onIncreaseCartItem={(id) => { props.onIncreaseCartItem(id) }}
+                        onDeleteCartItem={(id) => { props.onDeleteCartItem(id) }}
+                        total={props.total}
+                    />
+                </div>
+            </div>
+        </>
     )
 }
 
@@ -25,9 +31,11 @@ Cart.propTypes = {
     cartItems: PropTypes.array,
     productsCount: PropTypes.number,
     total: PropTypes.string,
+    isCartOpen: PropTypes.bool,
     onDecreaseCartItem: PropTypes.func,
     onIncreaseCartItem: PropTypes.func,
     onDeleteCartItem: PropTypes.func,
+    onClickHeader: PropTypes.func,
 }
 
 export default Cart

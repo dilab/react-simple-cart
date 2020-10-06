@@ -5,9 +5,9 @@ import ShoppingCart from './components/ShoppingCart';
 function App() {
 
   return (
-    <div className="container-fluid mt-5">
+    <>
       <ShoppingCart />
-    </div>
+    </>
   );
 }
 

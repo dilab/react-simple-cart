@@ -29,9 +29,9 @@ class CartItems extends React.Component {
         });
 
         return (
-            <div>
+            <>
                 {itemsContent}
-            </div>
+            </>
         )
     }
 

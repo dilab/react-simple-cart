@@ -10,7 +10,7 @@ function ProductList(props) {
 
     const productsContent = products.map((product) => {
         return (
-            <div className="col-lg-3 col-sm-6 mb-1" key={product.id}>
+            <div className="col-lg-3 col-sm-6 mb-2" key={product.id}>
                 <Product
                     id={product.id}
                     name={product.name}
@@ -25,13 +25,13 @@ function ProductList(props) {
     });
 
     return (
-        <div>
+        <>
             <ProductListHeader productsCount={products.length} />
 
             <div className="row">
                 {productsContent}
             </div>
-        </div>
+        </>
     )
 }
 

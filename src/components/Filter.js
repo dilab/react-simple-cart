@@ -14,10 +14,10 @@ function Filter(props) {
     });
 
     return (
-        <div>
+        <>
             <h4>Sizes</h4>
             {optionsContent}
-        </div>
+        </>
     )
 }
 

@@ -8,7 +8,7 @@ function Product(props) {
         <div className="card text-center">
 
             {isFreeShipping &&
-                <span className="badge badge-warning position-absolute m-1">Free shipping</span>}
+                <span className="badge badge-success position-absolute m-1">Free shipping</span>}
 
             <img src={props.imgLink} className="card-img-top" alt={props.name} />
             <div className="card-body">

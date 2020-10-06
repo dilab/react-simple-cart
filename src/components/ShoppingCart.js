@@ -11,6 +11,7 @@ class ShoppingCart extends React.Component {
         super();
 
         this.state = {
+            isCartOpen: false,
             filters: [
                 { value: 'S', checked: false },
                 { value: 'M', checked: false },
@@ -70,31 +71,45 @@ class ShoppingCart extends React.Component {
         const { cartItems, filters, filteredProducts } = this.state;
 
         return (
-            <div className="row">
-                <div className="col-2">
-                    <Filter
-                        options={filters}
-                        onToggle={(optionValue) => { this.handleFilterToggle(optionValue) }}
-                    />
+
+            <>
+                <Cart
+                    cartItems={cartItems}
+                    productsCount={this.countProducts()}
+                    onDecreaseCartItem={(id) => { this.handleDecreaseCartItem(id) }}
+                    onIncreaseCartItem={(id) => { this.handleIncreaseCartItem(id) }}
+                    onDeleteCartItem={(id) => { this.handleDeleteCartItem(id) }}
+                    total={this.computeTotal()}
+                    isCartOpen={this.state.isCartOpen}
+                    onClickHeader={() => { this.handleClickHeader() }}
+                />
+
+                <div className={"container-fluid mt-5" + (this.state.isCartOpen ? " d-none" : "")}>
+                    <div className="row">
+                        <div className="col-2">
+                            <Filter
+                                options={filters}
+                                onToggle={(optionValue) => { this.handleFilterToggle(optionValue) }}
+                            />
+                        </div>
+                        <div className="col-10">
+                            <ProductList
+                                products={filteredProducts}
+                                onAddToCart={(id) => { this.handleAddToCart(id) }}
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div className="col-10">
-                    <ProductList
-                        products={filteredProducts}
-                        onAddToCart={(id) => { this.handleAddToCart(id) }}
-                    />
-                </div>
-                <div className="container mt-5" style={{ maxWidth: 540 }}>
-                    <Cart
-                        cartItems={cartItems}
-                        productsCount={this.countProducts()}
-                        onDecreaseCartItem={(id) => { this.handleDecreaseCartItem(id) }}
-                        onIncreaseCartItem={(id) => { this.handleIncreaseCartItem(id) }}
-                        onDeleteCartItem={(id) => { this.handleDeleteCartItem(id) }}
-                        total={this.computeTotal()}
-                    />
-                </div>
-            </div>
+            </>
         )
+    }
+
+    handleClickHeader() {
+        const result = this.state.isCartOpen;
+
+        this.setState({
+            isCartOpen: !result
+        })
     }
 
     handleAddToCart(id) {

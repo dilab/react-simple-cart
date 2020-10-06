@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function CartFooter(props) {
+function CartSubtotal(props) {
     return (
         <div className="row border-top border-1 pt-3">
             <div className="col text-left">
@@ -16,9 +16,9 @@ function CartFooter(props) {
     )
 }
 
-CartFooter.propTypes = {
+CartSubtotal.propTypes = {
     total: PropTypes.string
 }
 
-export default CartFooter
+export default CartSubtotal
 
