@@ -24,42 +24,66 @@ class ShoppingCart extends React.Component {
                 {
                     id: 1,
                     size: 'S',
-                    name: "Cat Tee Black T-Shirt",
+                    name: 'Thrasher Flame Black T-Shirt',
                     price: 10.90,
                     isFreeShipping: true,
-                    imgLink: 'https://via.placeholder.com/300x400.png'
+                    imgLink: 'img/p1.png'
                 },
                 {
                     id: 2,
                     size: 'M',
-                    name: "Cat Tee Black T-Shirt",
+                    name: 'Cat Tee Black T-Shirt',
                     price: 20.90,
                     isFreeShipping: false,
-                    imgLink: 'https://via.placeholder.com/300x400.png'
+                    imgLink: 'img/p2.png'
                 },
                 {
                     id: 3,
                     size: 'L',
-                    name: "Cat Tee Black T-Shirt",
+                    name: 'Thrasher Roses Black T-Shirt',
                     price: 30.90,
                     isFreeShipping: true,
-                    imgLink: 'https://via.placeholder.com/300x400.png'
+                    imgLink: 'img/p3.png'
                 },
                 {
                     id: 4,
                     size: 'XL',
-                    name: "Cat Tee Black T-Shirt",
+                    name: 'Primitive Lantern Black T-Shirt',
                     price: 40.90,
                     isFreeShipping: false,
-                    imgLink: 'https://via.placeholder.com/300x400.png'
+                    imgLink: 'img/p4.png'
                 },
                 {
                     id: 5,
                     size: 'S',
-                    name: "Cat Tee Black T-Shirt",
+                    name: 'Primitive Moods Green Dye Long Sleeve T-Shirt',
                     price: 10.90,
                     isFreeShipping: true,
-                    imgLink: 'https://via.placeholder.com/300x400.png'
+                    imgLink: 'img/p5.png'
+                },
+                {
+                    id: 6,
+                    size: 'S',
+                    name: 'Vans x Santa Cruz Check Black T-Shirt',
+                    price: 10.90,
+                    isFreeShipping: true,
+                    imgLink: 'img/p6.png'
+                },
+                {
+                    id: 7,
+                    size: 'S',
+                    name: 'Vans x Santa Cruz Wall Grab Black T-Shirt',
+                    price: 10.90,
+                    isFreeShipping: true,
+                    imgLink: 'img/p7.png'
+                },
+                {
+                    id: 8,
+                    size: 'S',
+                    name: 'A-Lab Wizard Stuff Black T-Shirt',
+                    price: 10.90,
+                    isFreeShipping: true,
+                    imgLink: 'img/p8.png'
                 },
             ]
         }
