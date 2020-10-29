@@ -4,6 +4,16 @@ This is a very simple shopping cart powered by React. No state container such as
 
 This project is used to demonstrate the power of React and is built while learning the fundamentals of React, I hope you find it useful.
 
+## Screenshots
+
+### Index page
+
+<img src="demo/index.jpg"/>
+
+### Cart page
+
+<img src="demo/cart.jpg"/>
+
 ## Getting started
 
 ### Requirements(the following are the versions we used when developing this project)
