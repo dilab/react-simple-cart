@@ -14,10 +14,11 @@ This project is used to demonstrate the power of React and is built while learni
 
 <img src="demo/cart.jpg"/>
 
-## Getting started
+## Environment
 
-### Requirements(the following are the versions we used when developing this project)
-
++ React Version:  17.0.1
++ Development Machine: macOS Catalina Version 10.15
++ Development IDE: Visual Studio Code
 + NodeJS: v13.10.1
 + NPM: 6.13.7
 
