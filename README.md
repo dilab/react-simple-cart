@@ -30,4 +30,3 @@ Run `yarn install` to install this project along with its dependencies
 
 + Run `yarn start` to start the development server.
 + Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-git branch -M main
