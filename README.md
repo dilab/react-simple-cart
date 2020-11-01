@@ -1,8 +1,8 @@
 # React Simple Cart
 
-This is a very simple shopping cart powered by React. No state container such as Redux and no router is used in this project. 
+This is a very simple shopping cart powered by React. No state containers such as Redux or router is used in this project. 
 
-This project is used to demonstrate the power of React and is built while learning the fundamentals of React, I hope you find it useful.
+We developed this project when learning the fundamentals of React. It demonstrates the power of React. Hope you find it useful.
 
 ## Screenshots
 
@@ -30,3 +30,4 @@ Run `yarn install` to install this project along with its dependencies
 
 + Run `yarn start` to start the development server.
 + Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+git branch -M main
